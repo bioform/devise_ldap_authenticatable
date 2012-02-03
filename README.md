@@ -1,3 +1,12 @@
+Fork Information
+===========================
+this code was forked from https://github.com/cschiewek/devise_ldap_authenticatable (version 0.4.4)
+because it has few errors:
+
+- LDAP search doesn't search iver whole tree (:scope => Net::LDAP::SearchScope_WholeSubtree)
+- Use only ::Devise.authentication_keys.first (should use model :authentication_keys key)
+
+
 Devise LDAP Authenticatable
 ===========================
 
