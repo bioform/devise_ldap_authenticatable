@@ -204,7 +204,7 @@ module Devise
         DeviseLdapAuthenticatable::Logger.send("LDAP search for login: #{@attribute}=#{@login}")
         filter = Net::LDAP::Filter.eq(@attribute.to_s, @login.to_s)
         ldap_entry = nil
-        @ldap.search(:filter => filter) {|entry| ldap_entry = entry}
+        @ldap.search(:scope => Net::LDAP::SearchScope_WholeSubtree, :filter => filter) {|entry| ldap_entry = entry}
         ldap_entry
       end
       
